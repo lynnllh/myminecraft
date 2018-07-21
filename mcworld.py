@@ -8,6 +8,7 @@ from mcenvironment import Environment
 from mcbase import Base
 from mchill import Hill
 from mcblock import Block
+from mccloud import Cloud
 from mclandscape import Landscape
 import random
 import time
@@ -27,9 +28,11 @@ class World(Environment):
         self.base=Base(worldsize,batch,group,world,shown,_shown,sectors,queue)
         self.hill=Hill(worldsize,batch,group,world,shown,_shown,sectors,queue)
         self.landscape=Landscape(worldsize,batch,group,world,shown,_shown,sectors,queue)
+        self.cloud=Cloud(worldsize,batch,group,world,shown,_shown,sectors,queue)
         self.base.generateBase()
         self.generateLandscapes()
         self.generateHills()
+        self.cloud.generateClouds()
         
 #        self.hill.generateHill((40,0,40))
         
